@@ -1,0 +1,110 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  box-sizing: border-box;
+  background: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop') no-repeat center center fixed;
+  background-size: cover;
+}
+
+/* Overlay for text readability outside the black box */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.25); /* Overlay for watercolor background */
+  z-index: -1;
+}
+
+.container {
+  max-width: 600px;
+  margin: auto;
+  text-align: center;
+  padding: 20px;
+}
+
+h1 {
+  color: #fff;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8); /* Strong shadow for watercolor background */
+}
+
+input[type="text"] {
+  padding: 10px;
+  width: 80%;
+  font-size: 16px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.7); /* Minimal input background */
+  color: #333;
+  text-shadow: none; /* No shadow for input text */
+}
+
+input[type="text"]::placeholder {
+  color: #555;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Shadow for placeholder */
+}
+
+.weather-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card-wrapper {
+  background: #000000; /* Black background for weather details box */
+  padding: 20px;
+  margin: 10px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 500px;
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Subtle border for definition */
+}
+
+.card-wrapper h2,
+.card-wrapper p {
+  color: #fff;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Lighter shadow since background is black */
+}
+
+.weather-icon {
+  width: 50px;
+  height: 50px;
+  vertical-align: middle;
+}
+
+.loading {
+  visibility: hidden;
+  font-size: 18px;
+  color: #66b3ff; /* Brighter blue for visibility */
+  margin: 10px 0;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+}
+
+.error-message {
+  color: #ff6666; /* Brighter red for visibility */
+  margin-top: 10px;
+  font-size: 16px;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .container {
+    padding: 10px;
+  }
+  input[type="text"] {
+    width: 90%;
+  }
+  .card-wrapper {
+    padding: 15px;
+    margin: 5px;
+  }
+  h1 {
+    font-size: 24px;
+  }
+}
